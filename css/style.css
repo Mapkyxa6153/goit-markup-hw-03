@@ -159,12 +159,16 @@ p {
 
 /* strengths */
 .strenghts-list {
+  outline: 2px solid var(--akcent-text-color);
   display: flex;
   justify-content: space-between;
-  margin-left: 30px;
 }
 .strenghts-list > .strenghts-item {
-  margin-left: -30px;
+  margin-right: 30px;
+  outline: 2px solid red;
+}
+.strenghts-item:last-child {
+  margin-right: 0;
 }
 
 .title {
@@ -186,7 +190,6 @@ p {
 }
 .strengths-text {
   color: var(--secondary-text-colort);
-  margin-right: 30px;
   font-weight: 400;
   font-size: 14px;
   line-height: 1.71;
