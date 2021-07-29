@@ -158,6 +158,9 @@ p {
 }
 
 /* strengths */
+.strenghts {
+  margin-top: 0;
+}
 .strenghts-list {
   outline: 2px solid var(--akcent-text-color);
   display: flex;
