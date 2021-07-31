@@ -10,6 +10,9 @@
   --secondary-text-colort: #757575;
   --akcent-text-color: #2196f3;
   --background-color: #ffffff;
+  --background-color-secondary: #2f303a;
+  --background-color-tertiary: #f5f4fa;
+  --btn-color: #f5f4fa;
 }
 
 body {
@@ -23,6 +26,11 @@ p {
   list-style: none;
   margin: 0;
   padding: 0;
+}
+img. {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 /* header */
 .header {
@@ -84,16 +92,12 @@ p {
   justify-content: center;
   margin-bottom: 20px;
 }
-/* .buttons > .button + .button {
-  margin-left: 8px;
-} */
-.buttons > .button:first-child {
-  margin-left: 0;
-}
+
 .button {
   margin-left: 8px;
+  padding: 6px 22px;
   color: var(--primary-text-color);
-  background: #f5f4fa;
+  background: var(--btn-color);
   font-weight: 500;
   font-size: 16px;
   line-height: 1.6;
@@ -102,10 +106,21 @@ p {
   border: 0px;
   border-radius: 4px;
 }
+/* .button:first-child {
+  margin-left: 0;
+} */
+.button.current {
+  color: var(--background-color);
+  background-color: var(--akcent-text-color);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
+}
 .button:hover,
 .button:focus {
   color: var(--background-color);
   background-color: var(--akcent-text-color);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
   cursor: pointer;
 }
 
@@ -134,7 +149,7 @@ p {
 .hero-section {
   padding: 200px 0;
   text-align: center;
-  background-color: #2f303a;
+  background-color: var(--background-color-secondary);
 }
 .hero-title {
   margin-top: 0;
@@ -163,6 +178,10 @@ p {
 .strenghts {
   margin-top: 0;
 }
+.strenghts-section {
+  padding-top: 94px;
+  padding-bottom: 0px;
+}
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -178,7 +197,7 @@ p {
   margin-left: -30px;
 }
 .strenghts-item {
-  flex-basis: calc(100% / 4 -30px);
+  flex-basis: calc(100% / 4 - 30px);
   margin-left: 30px;
 }
 .title {
@@ -220,19 +239,19 @@ p {
 /* section Team */
 .team-cards {
   display: flex;
-  justify-content: space-between;
   margin-left: -30px;
 }
-.team-cards > .team-card {
+.team-card {
+  flex-basis: calc(100% / 4 - 30px);
   margin-left: 30px;
-  background-color: #ffffff;
+  background-color: var(--background-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
 }
 
 .team {
-  background-color: #e5e5e5;
+  background-color: var(--background-color-tertiary);
 }
 
 .team-title {
@@ -244,11 +263,7 @@ p {
   margin-bottom: 50px;
 }
 
-.member-photo {
-  margin-bottom: 30px;
-}
 .name {
-  text-align: center;
   color: var(--primary-text-color);
   font-weight: 500;
   font-size: 16px;
@@ -257,21 +272,24 @@ p {
   margin-bottom: 10px;
 }
 .position {
-  text-align: center;
   color: var(--secondary-text-colort);
   font-weight: 400;
   font-size: 16px;
   line-height: 1.19;
   letter-spacing: 0.03em;
-  margin-bottom: 30px;
+}
+.member-description {
+  text-align: center;
+  padding: 30px 0;
 }
 
 /* footer */
 .footer {
-  background-color: #2f303a;
+  padding: 60px;
+  background-color: var(--background-color-secondary);
 }
 .logo-footer {
-  color: #ffffff;
+  color: var(--background-color);
   font-family: Raleway, sans-serif;
   font-size: 26px;
   line-height: 1.19;
@@ -281,7 +299,9 @@ p {
 .logo-web {
   color: var(--akcent-text-color);
 }
-
+.address {
+  margin-top: 20px;
+}
 .address .link:hover,
 .address .link:focus {
   color: var(--akcent-text-color);
@@ -303,23 +323,20 @@ p {
 /* portfolio page */
 .works {
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
   margin-left: -30px;
   margin-bottom: -30px;
 }
-.works > .works-examples {
+.works-examples {
   margin-left: 30px;
   margin-bottom: 30px;
-  flex-basis: calc(100% / 3 -30px);
+  flex-basis: calc(100% / 3 - 30px);
 
-  border-bottom: 1px solid #eeeeee;
+  border: 1px solid #eeeeee;
 }
 .works .link {
   text-decoration: none;
-}
-.works-imgs {
-  margin-bottom: 20px;
+  display: block;
 }
 
 .works .title {
@@ -328,6 +345,7 @@ p {
   font-size: 18px;
   line-height: 2;
   letter-spacing: 0.06em;
+  margin-bottom: 4px;
 }
 .works .description {
   margin-bottom: 20px;
@@ -337,9 +355,12 @@ p {
   line-height: 1.88;
   letter-spacing: 0.03em;
 }
+.works-wrapper {
+  padding: 20px 24px;
+}
 
 .container {
-  width: 1170px;
+  width: 1200px;
   padding: 0 15px;
   margin-left: auto;
   margin-right: auto;
