@@ -337,6 +337,9 @@ img {
 .works-examples:nth-child(3n) {
   margin-right: 0;
 }
+.works-examples:nth-last-child(-n + 3) {
+  margin-bottom: 0;
+}
 .works .link {
   text-decoration: none;
   display: block;
